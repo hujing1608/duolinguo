@@ -1,0 +1,20 @@
+name: Do a Duolingo lesson
+
+on:
+  schedule:
+    - cron: "30 2 * * *"
+
+jobs:
+  study:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: node index.js
+        env:
+          DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
+          LESSONS: ${{ secrets.lessons }}
