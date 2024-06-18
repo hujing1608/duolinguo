@@ -1,4 +1,4 @@
-name: Do a Duolingo lesson
+name: Do Duolingo lesson Auto
 
 on:
   schedule:
